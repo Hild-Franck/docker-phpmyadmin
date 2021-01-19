@@ -60,6 +60,6 @@ include $file_with_secret;
 if (isset($_ENV['JSON_CONFIG'])) {
 	$custom = json_decode($_ENV['JSON_CONFIG'], true);
 
-	$cfg = array_merge($cfg, $custom);
+	$cfg = array_replace_recursive($cfg, $custom);
 }
 
